@@ -11,7 +11,9 @@
 }
 
 body {
-  margin: 0 6.25rem;
+  padding: 0 6.25rem;
+  margin: 0 auto;
+  max-width: calc(90rem + (2 * 6.25rem));
   background-color: var(--clr-cream);
 }
 
@@ -21,4 +23,13 @@ svg,
 video {
   display: block;
   max-width: 100%;
+}
+
+@media (max-width: 1430px) {
+  html {
+    font-size: 0.7rem;
+  }
+  .skills-grid {
+    --column-count: 3;
+  }
 }
