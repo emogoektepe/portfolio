@@ -27,9 +27,12 @@ video {
 
 @media (max-width: 1430px) {
   html {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
   }
   .skills-grid {
     --column-count: 3;
+  }
+  .grid-placeholder {
+    display: block !important;
   }
 }
