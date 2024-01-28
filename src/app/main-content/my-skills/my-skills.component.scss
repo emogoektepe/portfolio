@@ -15,6 +15,11 @@ section {
       color: var(--clr-primary);
     }
   }
+  > img {
+    margin-top: 5rem;
+    margin-left: 5rem;
+    transform: scaleX(-1);
+  }
 }
 
 .skills-grid {

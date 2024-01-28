@@ -1,0 +1,26 @@
+section {
+  text-align: center;
+  margin-top: 8rem;
+  > h1 {
+    font-family: var(--font-syne);
+    font-weight: 800;
+    font-size: 4.875rem;
+  }
+  > p {
+    font-family: var(--font-overpass);
+    font-size: 23px;
+    font-weight: 400;
+    width: 38ch;
+    display: inline-block;
+    margin-top: 1rem;
+  }
+  > div {
+    display: flex;
+    justify-content: end;
+    margin-top: 5rem;
+  }
+}
+
+app-single-project {
+  text-align: initial;
+}
