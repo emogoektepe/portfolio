@@ -5,6 +5,9 @@ section {
     font-family: var(--font-syne);
     font-weight: 800;
     font-size: 4.875rem;
+    &:hover {
+      color: var(--clr-primary);
+    }
   }
   > p {
     font-family: var(--font-overpass);
@@ -17,7 +20,7 @@ section {
   > div {
     display: flex;
     justify-content: end;
-    margin-top: 5rem;
+    transform: translateY(6rem);
   }
 }
 

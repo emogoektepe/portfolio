@@ -1,6 +1,6 @@
 section {
   background-color: var(--clr-dark);
-  clip-path: polygon(0% 0%, 100% 75%, 100% 100%, 0% 100%);
+  clip-path: polygon(0% 0%, 100% 10rem, 100% 100%, 0% 100%);
   > div {
     padding: 0 6.25rem;
     margin: 0 auto;
@@ -10,7 +10,10 @@ section {
       font-size: 4.875rem;
       font-family: var(--font-syne);
       font-weight: 800;
-      padding-top: 8rem;
+      padding-top: 10rem;
+      &:hover {
+        color: var(--clr-primary);
+      }
     }
   }
 }
@@ -34,4 +37,40 @@ section {
     font-weight: 400;
     font-size: 23px;
   }
+}
+
+.example-form {
+  max-width: 50%;
+  width: 100%;
+  display: grid;
+  gap: 1rem;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.text-area-contact {
+  min-height: 10rem;
+  max-height: 20rem;
+}
+
+.text-area-contact::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+.text-area-contact::-webkit-scrollbar-track {
+  background: black;
+}
+
+.text-area-contact::-webkit-scrollbar-thumb {
+  background: var(--clr-primary);
+}
+
+.text-area-contact::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.test {
+  color: white !important;
 }

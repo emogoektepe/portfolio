@@ -4,6 +4,37 @@
         <div class="form">
             <h3>Want to discuss a new project?</h3>
             <h4>Say hello! let's discuss your ideas and make it happen</h4>
+            <form class="example-form">
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>Your name</mat-label>
+                    <input type="text" matInput [formControl]="nameFormControl">
+                    @if (nameFormControl.hasError('required')) {
+                    <mat-error>Name is required</mat-error>
+                    }
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>Your email</mat-label>
+                    <input type="email" matInput [formControl]="emailFormControl" placeholder="Ex. pat@example.com">
+                    @if (emailFormControl.hasError('email') && !emailFormControl.hasError('required')) {
+                    <mat-error>Please enter a valid email address</mat-error>
+                    }
+                    @if (emailFormControl.hasError('required')) {
+                    <mat-error>Email is required</mat-error>
+                    }
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>Your message</mat-label>
+                    <textarea class="text-area-contact" maxlength="256" #message type="text" matInput
+                        [formControl]="messageFormControl"></textarea>
+                    <mat-hint class="test" align="end">{{message.value.length}} / 256</mat-hint>
+                    @if (messageFormControl.hasError('required')) {
+                    <mat-error>Your message is empty</mat-error>
+                    }
+                </mat-form-field>
+
+            </form>
         </div>
     </div>
 </section>
