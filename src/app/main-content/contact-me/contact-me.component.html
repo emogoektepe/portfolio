@@ -12,7 +12,6 @@
                     <mat-error>Name is required</mat-error>
                     }
                 </mat-form-field>
-
                 <mat-form-field class="example-full-width" appearance="outline">
                     <mat-label>Your email</mat-label>
                     <input type="email" matInput [formControl]="emailFormControl" placeholder="Ex. pat@example.com">
@@ -23,18 +22,19 @@
                     <mat-error>Email is required</mat-error>
                     }
                 </mat-form-field>
-
                 <mat-form-field class="example-full-width" appearance="outline">
                     <mat-label>Your message</mat-label>
                     <textarea class="text-area-contact" maxlength="256" #message type="text" matInput
                         [formControl]="messageFormControl"></textarea>
-                    <mat-hint class="test" align="end">{{message.value.length}} / 256</mat-hint>
+                    <mat-hint class="char-length" align="end">{{message.value.length}} / 256</mat-hint>
                     @if (messageFormControl.hasError('required')) {
                     <mat-error>Your message is empty</mat-error>
                     }
                 </mat-form-field>
-
             </form>
+            <button [disabled]="!(nameFormControl.valid && emailFormControl.valid && messageFormControl.valid)">
+                Send message
+            </button>
         </div>
     </div>
 </section>
