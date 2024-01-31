@@ -8,6 +8,15 @@
   margin: 0;
   padding: 0;
   user-select: none;
+  scroll-behavior: smooth;
+}
+
+* button:enabled {
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: scale(1.1);
+  }
 }
 
 body {

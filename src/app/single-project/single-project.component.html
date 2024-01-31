@@ -1,14 +1,13 @@
-<section>
+<section *ngFor="let project of projects; let i = index" [ngClass]="{'mirror-project': i % 2 !== 0}">
     <div>
-        <img src="./assets/images/join.png" alt="">
+        <img src="{{ project.projectImage }}" alt="">
     </div>
     <div>
-        <h1>01/05</h1>
+        <h1>{{ (i + 1) < 10 ? '0' : '' }}{{ i + 1 }}/{{ projects.length < 10 ? '0' : '' }}{{ projects.length }}</h1>
         <div class="project-info">
-            <h2>Join</h2>
-            <h3>Angular | TypeScript | HTML | CSS | Firebase</h3>
-            <p>Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign
-                users and categories.</p>
+            <h2>{{ project.projectName }}</h2>
+            <h3>{{project.projectLanguage}}</h3>
+            <p>{{ project.projectDescription }}</p>
             <button>Live</button>
             <button>Github</button>
         </div>
