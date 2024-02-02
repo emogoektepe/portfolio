@@ -1,23 +1,27 @@
-div {
+section {
+    position: sticky;
+    top: 0;
+    z-index: 9;
+    background-color: var(--clr-cream);
+  > div {
     display: flex;
-    position: sticky; top: 0;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--clr-cream);
-    padding: 1rem 0;
-    z-index: 9;
-    >img {
-        cursor: pointer;
+    padding: 1rem 6.25rem;
+    margin: 0 auto;
+    max-width: calc(90rem + (2 * 6.25rem));
+    > img {
+      cursor: pointer;
     }
-
+  }
 }
 
 .header-logo {
-    height: 4.625rem;
-    width: auto;
+  height: 4.625rem;
+  width: auto;
 }
 
 .burger-icon {
-    height: 2.5rem;
-    width: auto;
+  height: 2.5rem;
+  width: auto;
 }

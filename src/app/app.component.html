@@ -1,6 +1,7 @@
-<div>
-    <app-header id="landingPage"></app-header>
+<app-header [open]="isMenuOpen" (isMenuOpenChange)="onMenuToggle($event)"></app-header>
+<div *ngIf="!isMenuOpen">
     <router-outlet></router-outlet>
-</div>
-<app-contact-me></app-contact-me>
+</div> 
+<app-table-of-contents (closeMenuBar)="onMenuToggle($event)" *ngIf="isMenuOpen"></app-table-of-contents>
+<app-contact-me *ngIf="!isMenuOpen"></app-contact-me>
 <app-footer></app-footer>

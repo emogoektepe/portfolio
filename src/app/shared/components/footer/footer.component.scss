@@ -13,14 +13,11 @@ section {
 .footer-left {
   display: grid;
   gap: 1rem;
-  > a {
-    > img {
-      height: 4rem;
-      filter: invert(98%) sepia(78%) saturate(314%) hue-rotate(25deg)
-        brightness(113%) contrast(110%);
-      // filter: opacity(0.5) drop-shadow(0 0 0 var(--clr-cream));
-      cursor: pointer;
-    }
+  > img {
+    height: 4rem;
+    filter: invert(98%) sepia(78%) saturate(314%) hue-rotate(25deg)
+      brightness(113%) contrast(110%);
+    // cursor: pointer;
   }
   > p {
     color: var(--clr-cream);
