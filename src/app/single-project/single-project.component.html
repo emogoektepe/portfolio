@@ -1,6 +1,7 @@
 <section *ngFor="let project of projects; let i = index" [ngClass]="{'mirror-project': i % 2 !== 0}">
-    <div>
+    <div class="images-wrapper">
         <img src="{{ project.projectImage }}" alt="">
+        <div class="images-border"></div>
     </div>
     <div>
         <h1>{{ (i + 1) < 10 ? '0' : '' }}{{ i + 1 }}/{{ projects.length < 10 ? '0' : '' }}{{ projects.length }}</h1>
