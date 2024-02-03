@@ -11,8 +11,43 @@ section {
     font-size: 6rem;
     gap: 5rem;
     cursor: pointer;
-    > a {
-      all: unset;
+    > div {
+      > a {
+        all: unset;
+        position: relative;
+        z-index: 10;
+      }
+      padding: 1rem;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &:hover {
+        &:before {
+          content: "";
+          position: absolute;
+          width: 150%;
+          height: 150%;
+          background-color: var(--clr-dark);
+          animation: animate 4s linear infinite;
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          inset: 4px;
+          background-color: var(--clr-cream);
+        }
+      }
     }
+  }
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }

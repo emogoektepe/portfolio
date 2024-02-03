@@ -1,6 +1,8 @@
 <section>
     <div>
-        <img class="header-logo" src="./assets/images/logo.png" alt="">
-        <img (click)="toggleMenu()" class="burger-icon" src="./assets/images/burger1.svg" alt="">
+        <a href="#top">
+            <img class="header-logo" src="./assets/images/logo.png" alt="">
+        </a>
+        <img (click)="toggleMenu()" class="burger-icon" [src]="currentImage" alt="">
     </div>
 </section>

@@ -1,7 +1,7 @@
-<app-header [open]="isMenuOpen" (isMenuOpenChange)="onMenuToggle($event)"></app-header>
+<app-header id="top" [open]="isMenuOpen" (isMenuOpenChange)="onMenuToggle($event)"></app-header>
 <div *ngIf="!isMenuOpen">
     <router-outlet></router-outlet>
 </div> 
 <app-table-of-contents (closeMenuBar)="onMenuToggle($event)" *ngIf="isMenuOpen"></app-table-of-contents>
-<app-contact-me *ngIf="!isMenuOpen"></app-contact-me>
+<app-contact-me *ngIf="!isMenuOpen" id="contactMe"></app-contact-me>
 <app-footer></app-footer>
