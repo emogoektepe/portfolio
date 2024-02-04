@@ -1,7 +1,7 @@
 <section>
     <div>
         <a href="#top">
-            <img class="header-logo" src="./assets/images/logo.png" alt="">
+            <img (click)="closeMenu()" class="header-logo" src="./assets/images/logo.png" alt="">
         </a>
         <img (click)="toggleMenu()" class="burger-icon" [src]="currentImage" alt="">
     </div>

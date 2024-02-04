@@ -50,14 +50,31 @@ video {
   background: #555;
 }
 
-// @media (max-width: 1430px) {
-//   html {
-//     font-size: 0.9rem;
-//   }
-//   .skills-grid {
-//     --column-count: 3;
-//   }
-//   .grid-placeholder {
-//     display: block !important;
-//   }
-// }
+@media (max-width: 1400px) {
+  html {
+    font-size: 0.9rem;
+  }
+  .skills-grid {
+    --column-count: 3;
+  }
+  .grid-placeholder {
+    display: block !important;
+  }
+}
+
+@media (max-width: 1300px) {
+  html {
+    font-size: 0.8rem;
+  }
+  app-single-project {
+    > section {
+      flex-direction: column !important;
+    }
+  }
+}
+
+@media (max-width: 1100px) {
+  html {
+    font-size: 0.7rem;
+  }
+}

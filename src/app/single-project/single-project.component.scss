@@ -33,6 +33,9 @@ section {
     filter: grayscale(1);
   }
   &:hover {
+    .project-info {
+      display: block !important;
+    }
     * img {
       filter: grayscale(0);
     }
@@ -44,6 +47,20 @@ section {
         outline: 4px solid var(--clr-dark);
         animation: transformBorderRight 0.1s linear;
         animation-fill-mode: forwards;
+        display: flex !important;
+        align-items: center;
+        justify-content: end;
+        > div {
+          border-radius: 100%;
+          background-color: var(--clr-dark);
+          transform: translateX(40px);
+          > img {
+            padding: 16px;
+            transform: rotate(135deg);
+            animation: rotateArrowRight 0.1s linear;
+            animation-fill-mode: forwards;
+          }
+        }
       }
     }
     &.mirror-project {
@@ -51,6 +68,14 @@ section {
         > .images-border {
           animation: transformBorderLeft 0.1s linear;
           animation-fill-mode: forwards;
+          justify-content: left;
+          > div {
+            transform: translateX(-40px);
+            > img {
+              animation: rotateArrowLeft 0.1s linear;
+              animation-fill-mode: forwards;
+            }
+          }
         }
       }
     }
@@ -58,6 +83,10 @@ section {
 }
 
 .project-info {
+  animation: textOutRight 0.2s linear;
+  animation-fill-mode: forwards;
+  position: relative;
+  display: none;
   > * {
     margin-top: 2rem;
   }
@@ -78,6 +107,50 @@ section {
   * h1 {
     left: 0 !important;
     right: unset;
+  }
+  * .project-info {
+    animation: textOutLeft 0.2s linear;
+    animation-fill-mode: forwards;
+  }
+}
+
+@keyframes textOutRight {
+  0% {
+    transform: translateX(-200%);
+    z-index: -1;
+  }
+  100% {
+    z-index: 0;
+    transform: translateX(0%);
+  }
+}
+
+@keyframes textOutLeft {
+  0% {
+    transform: translateX(200%);
+    z-index: -1;
+  }
+  100% {
+    z-index: 0;
+    transform: translateX(0%);
+  }
+}
+
+@keyframes rotateArrowRight {
+  0% {
+    transform: rotate(135deg);
+  }
+  100% {
+    transform: rotate(20deg);
+  }
+}
+
+@keyframes rotateArrowLeft {
+  0% {
+    transform: rotate(135deg);
+  }
+  100% {
+    transform: rotate(250deg);
   }
 }
 

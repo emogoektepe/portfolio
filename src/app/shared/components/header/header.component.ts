@@ -44,4 +44,8 @@ export class HeaderComponent {
   toggleMenu() {
     this.isMenuOpenChange.emit(!this.open);
   }
+
+  closeMenu() {
+    this.isMenuOpenChange.emit(false);
+  }
 }

@@ -4,4 +4,4 @@
 </div> 
 <app-table-of-contents (closeMenuBar)="onMenuToggle($event)" *ngIf="isMenuOpen"></app-table-of-contents>
 <app-contact-me *ngIf="!isMenuOpen" id="contactMe"></app-contact-me>
-<app-footer></app-footer>
+<app-footer [open]="isMenuOpen" (closeMenuBar)="onMenuToggle($event)"></app-footer>
