@@ -21,9 +21,12 @@ import { MatFormFieldModule } from '@angular/material/form-field';
   styleUrl: './contact-me.component.scss',
 })
 export class ContactMeComponent {
+  emailPattern = '^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$';
+
   emailFormControl = new FormControl('', [
     Validators.required,
     Validators.email,
+    Validators.pattern(this.emailPattern),
   ]);
   nameFormControl = new FormControl('', [Validators.required]);
   messageFormControl = new FormControl('', [Validators.required]);

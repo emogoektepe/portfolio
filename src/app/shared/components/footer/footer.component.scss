@@ -47,11 +47,14 @@ section {
       }
     }
   }
-  > span {
-    font-family: var(--font-overpass);
-    font-size: 16px;
-    font-weight: 400;
-    color: var(--clr-cream);
-    cursor: pointer;
+  > a {
+    all: unset;
+    > span {
+      font-family: var(--font-overpass);
+      font-size: 16px;
+      font-weight: 400;
+      color: var(--clr-cream);
+      cursor: pointer;
+    }
   }
 }
