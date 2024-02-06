@@ -13,7 +13,7 @@ section {
     font-family: var(--font-overpass);
     font-size: 23px;
     font-weight: 400;
-    width: 38ch;
+    max-width: 38ch;
     display: inline-block;
     margin-top: 1rem;
   }

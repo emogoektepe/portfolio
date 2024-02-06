@@ -4,12 +4,15 @@ section {
   margin-top: 10rem;
   position: relative;
   justify-content: space-between;
+  flex-direction: column;
+  align-items: baseline;
+  gap: 2rem;
   * h1 {
     font-family: var(--font-syne);
     font-weight: 700;
     font-size: 3rem;
     position: absolute;
-    top: -3rem;
+    top: -5rem;
     right: 0;
   }
   * h2 {
@@ -29,53 +32,32 @@ section {
     font-weight: 400;
     max-width: 40ch;
   }
-  * img {
-    filter: grayscale(1);
-  }
-  &:hover {
-    .project-info {
-      display: block !important;
-    }
-    * img {
-      filter: grayscale(0);
-    }
-    > .images-wrapper {
-      position: relative;
-      > .images-border {
-        position: absolute;
-        inset: 0;
-        outline: 4px solid var(--clr-dark);
-        animation: transformBorderRight 0.1s linear;
-        animation-fill-mode: forwards;
-        display: flex !important;
-        align-items: center;
-        justify-content: end;
-        > div {
-          border-radius: 100%;
-          background-color: var(--clr-dark);
-          transform: translateX(40px);
-          > img {
-            padding: 16px;
-            transform: rotate(135deg);
-            animation: rotateArrowRight 0.1s linear;
-            animation-fill-mode: forwards;
-          }
+  > .images-wrapper {
+    position: relative;
+    > .images-border {
+      position: absolute;
+      inset: 0;
+      outline: 4px solid var(--clr-dark);
+      display: flex;
+      align-items: center;
+      justify-content: end;
+      > div {
+        border-radius: 100%;
+        background-color: var(--clr-dark);
+        transform: translateX(40px);
+        > img {
+          padding: 16px;
+          transform: rotate(135deg);
         }
       }
     }
-    &.mirror-project {
-      > .images-wrapper {
-        > .images-border {
-          animation: transformBorderLeft 0.1s linear;
-          animation-fill-mode: forwards;
-          justify-content: left;
-          > div {
-            transform: translateX(-40px);
-            > img {
-              animation: rotateArrowLeft 0.1s linear;
-              animation-fill-mode: forwards;
-            }
-          }
+  }
+  &.mirror-project {
+    > .images-wrapper {
+      > .images-border {
+        justify-content: left;
+        > div {
+          transform: translateX(-40px);
         }
       }
     }
@@ -83,10 +65,7 @@ section {
 }
 
 .project-info {
-  animation: textOutRight 0.2s linear;
-  animation-fill-mode: forwards;
   position: relative;
-  display: none;
   > * {
     margin-top: 2rem;
   }
@@ -103,71 +82,17 @@ section {
 }
 
 .mirror-project {
-  flex-direction: row-reverse;
+  flex-direction: column;
+  align-items: end !important;
   * h1 {
     left: 0 !important;
     right: unset;
   }
   * .project-info {
-    animation: textOutLeft 0.2s linear;
-    animation-fill-mode: forwards;
-  }
-}
-
-@keyframes textOutRight {
-  0% {
-    transform: translateX(-200%);
-    z-index: -1;
-  }
-  100% {
-    z-index: 0;
-    transform: translateX(0%);
-  }
-}
-
-@keyframes textOutLeft {
-  0% {
-    transform: translateX(200%);
-    z-index: -1;
-  }
-  100% {
-    z-index: 0;
-    transform: translateX(0%);
-  }
-}
-
-@keyframes rotateArrowRight {
-  0% {
-    transform: rotate(135deg);
-  }
-  100% {
-    transform: rotate(20deg);
-  }
-}
-
-@keyframes rotateArrowLeft {
-  0% {
-    transform: rotate(135deg);
-  }
-  100% {
-    transform: rotate(250deg);
-  }
-}
-
-@keyframes transformBorderRight {
-  0% {
-    transform: translate(0, 0);
-  }
-  100% {
-    transform: translate(2rem, 2rem);
-  }
-}
-
-@keyframes transformBorderLeft {
-  0% {
-    transform: translate(0, 0);
-  }
-  100% {
-    transform: translate(-2rem, 2rem);
+    text-align: end;
+    > button {
+      margin-right: 0;
+      margin-left: 2rem;
+    }
   }
 }

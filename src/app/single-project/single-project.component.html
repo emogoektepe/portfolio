@@ -1,8 +1,8 @@
 <section *ngFor="let project of projects; let i = index" [ngClass]="{'mirror-project': i % 2 !== 0}">
     <div class="images-wrapper">
         <img src="{{ project.projectImage }}" alt="">
-        <div class="images-border" style="display: none;">
-            <div><img src="./assets/images/lightArrow.svg" alt=""></div>
+        <div class="images-border">
+            <div><img src="./assets/images/lightArrow.svg" alt="" class="image-arrow-dNone"></div>
         </div>
     </div>
     <div>

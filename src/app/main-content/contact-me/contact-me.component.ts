@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import {
   FormControl,
   Validators,
@@ -7,6 +7,7 @@ import {
 } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-contact-me',
@@ -23,6 +24,17 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 export class ContactMeComponent {
   emailPattern = '^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$';
 
+  post = {
+    endPoint: 'https://emre-goektepe.com/sendMail.php',
+    body: (payload: any) => JSON.stringify(payload),
+    option: {
+      headers: {
+        'Content-Type': 'text/plain',
+        responseType: 'text',
+      },
+    },
+  };
+
   emailFormControl = new FormControl('', [
     Validators.required,
     Validators.email,
@@ -30,4 +42,22 @@ export class ContactMeComponent {
   ]);
   nameFormControl = new FormControl('', [Validators.required]);
   messageFormControl = new FormControl('', [Validators.required]);
+
+  http = inject(HttpClient);
+
+  sendMessage() {
+    const contactData = {
+      name: this.nameFormControl.value,
+      email: this.emailFormControl.value,
+      message: this.messageFormControl.value,
+    };
+
+    this.http.post(this.post.endPoint, this.post.body(contactData)).subscribe({
+      next: (response) => {
+        this.nameFormControl.reset();
+        this.emailFormControl.reset();
+        this.messageFormControl.reset();
+      },
+    });
+  }
 }
