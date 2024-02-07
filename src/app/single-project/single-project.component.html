@@ -1,6 +1,6 @@
 <section *ngFor="let project of projects; let i = index" [ngClass]="{'mirror-project': i % 2 !== 0}">
     <div class="images-wrapper">
-        <img src="{{ project.projectImage }}" alt="">
+        <img src="{{ project.image }}" alt="">
         <div class="images-border">
             <div><img src="./assets/images/lightArrow.svg" alt="" class="image-arrow-dNone"></div>
         </div>
@@ -8,11 +8,15 @@
     <div>
         <h1>{{ (i + 1) < 10 ? '0' : '' }}{{ i + 1 }}/{{ projects.length < 10 ? '0' : '' }}{{ projects.length }}</h1>
                 <div class="project-info">
-                    <h2>{{ project.projectName }}</h2>
-                    <h3>{{project.projectLanguage}}</h3>
-                    <p>{{ project.projectDescription }}</p>
-                    <button>Live</button>
-                    <button>Github</button>
+                    <h2>{{ project.name }}</h2>
+                    <h3>{{project.language}}</h3>
+                    <p>{{ project.description }}</p>
+                    <a target="_blank" href={{project.live}}>
+                        <button>Live</button>
+                    </a>
+                    <a target="_blank" href="{{project.github}}">
+                        <button>Github</button>
+                    </a>
                 </div>
     </div>
 </section>

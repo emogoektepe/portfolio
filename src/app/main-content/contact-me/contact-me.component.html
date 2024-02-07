@@ -32,7 +32,8 @@
                     }
                 </mat-form-field>
             </form>
-            <button (click)="sendMessage()" [disabled]="!(nameFormControl.valid && emailFormControl.valid && messageFormControl.valid)">
+            <button (click)="sendMessage()">
+            <!-- <button (click)="sendMessage()" [disabled]="!(nameFormControl.valid && emailFormControl.valid && messageFormControl.valid)"> -->
                 Send message
             </button>
         </div>
