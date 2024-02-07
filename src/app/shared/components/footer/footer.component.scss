@@ -48,13 +48,46 @@ section {
     }
   }
   > a {
-    all: unset;
     > span {
-      font-family: var(--font-overpass);
-      font-size: 16px;
-      font-weight: 400;
-      color: var(--clr-cream);
-      cursor: pointer;
+      position: relative;
+      z-index: 9;
     }
+    all: unset;
+    overflow: hidden;
+    padding: 5px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-overpass);
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--clr-cream);
+    cursor: pointer;
+    &:hover {
+      &::before {
+        content: "";
+        position: absolute;
+        width: 200%;
+        height: 50%;
+        background-color: var(--clr-cream);
+        animation: animatePP 2s linear infinite;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        background-color: var(--clr-dark);
+        inset: 1px;
+      }
+    }
+  }
+}
+
+@keyframes animatePP {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }

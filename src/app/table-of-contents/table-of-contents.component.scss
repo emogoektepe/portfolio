@@ -24,13 +24,13 @@ section {
       align-items: center;
       justify-content: center;
       &:hover {
-        &:before {
+        &::before {
           content: "";
           position: absolute;
           width: 200%;
           height: 50%;
           background-color: var(--clr-dark);
-          animation: animate 3s linear infinite;
+          animation: animateTOC 3s linear infinite;
         }
         &::after {
           content: "";
@@ -43,7 +43,7 @@ section {
   }
 }
 
-@keyframes animate {
+@keyframes animateTOC {
   0% {
     transform: rotate(0deg);
   }

@@ -66,7 +66,7 @@ export class ContactMeComponent {
           horizontalPosition: this.horizontalPosition,
           verticalPosition: this.verticalPosition,
           panelClass: ['snackbarCenter'],
-          duration: 5000,
+          duration: 2000,
         });
         this.nameFormControl.reset();
         this.emailFormControl.reset();
