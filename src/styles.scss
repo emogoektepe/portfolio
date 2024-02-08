@@ -300,7 +300,9 @@ video {
     text-align: center;
   }
   #mySkills {
-    font-size: 4rem !important;
+    * h1 {
+      font-size: 4rem !important;
+    }
   }
   .skills-grid {
     --column-count: 2;
@@ -320,8 +322,10 @@ video {
     text-align: center;
   }
   #mySkills {
-    font-size: 3rem !important;
-    transform: translateY(2rem);
+    * h1 {
+      font-size: 3rem !important;
+      transform: translateY(2rem);
+    }
   }
   #aboutMe {
     > h1 {
@@ -329,8 +333,9 @@ video {
     }
   }
   #portfolio {
-    > h1 {
+    * h1 {
       font-size: 4rem !important;
+      text-align: center !important;
     }
   }
   .project-info {
