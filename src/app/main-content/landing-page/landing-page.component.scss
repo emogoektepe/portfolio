@@ -49,14 +49,16 @@ section {
     }
   }
   > div {
-    div {
-      min-height: 100px;
-      position: relative;
-      overflow: hidden;
-      > img {
-        position: absolute;
-        top: -100%;
-        animation: arrowAnimation 2s linear infinite;
+    > a {
+      > div {
+        min-height: 100px;
+        position: relative;
+        overflow: hidden;
+        > img {
+          position: absolute;
+          top: -100%;
+          animation: arrowAnimation 2s linear infinite;
+        }
       }
     }
   }

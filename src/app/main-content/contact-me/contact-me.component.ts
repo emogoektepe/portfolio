@@ -13,6 +13,8 @@ import {
   MatSnackBarHorizontalPosition,
   MatSnackBarVerticalPosition,
 } from '@angular/material/snack-bar';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-contact-me',
@@ -22,6 +24,8 @@ import {
     MatFormFieldModule,
     MatInputModule,
     ReactiveFormsModule,
+    MatCheckboxModule,
+    RouterLink,
   ],
   templateUrl: './contact-me.component.html',
   styleUrl: './contact-me.component.scss',
@@ -48,10 +52,15 @@ export class ContactMeComponent {
   ]);
   nameFormControl = new FormControl('', [Validators.required]);
   messageFormControl = new FormControl('', [Validators.required]);
+  checkBoxFormControl = new FormControl('', [Validators.required]);
 
   http = inject(HttpClient);
 
   constructor(private _snackBar: MatSnackBar) {}
+
+  scrollToTop() {
+    window.scrollTo(0, 0);
+  }
 
   sendMessage() {
     const contactData = {

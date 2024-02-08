@@ -43,6 +43,7 @@ export class HeaderComponent {
 
   toggleMenu() {
     this.isMenuOpenChange.emit(!this.open);
+    window.scrollTo(0, 0);
   }
 
   closeMenu() {

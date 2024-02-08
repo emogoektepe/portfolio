@@ -203,6 +203,9 @@ video {
       max-width: 60% !important;
     }
   }
+  .back-to-top {
+    bottom: 4rem !important;
+  }
 }
 
 @media (max-width: 700px) {
@@ -241,7 +244,6 @@ video {
   }
   app-footer {
     > section {
-      padding-top: 50px;
       > div {
         flex-direction: column-reverse;
         align-items: center;
@@ -262,6 +264,9 @@ video {
     flex-direction: column;
     align-items: center;
     gap: 20px !important;
+  }
+  .back-to-top {
+    display: none !important;
   }
 }
 
@@ -295,9 +300,7 @@ video {
     text-align: center;
   }
   #mySkills {
-    > h1 {
-      font-size: 4rem !important;
-    }
+    font-size: 4rem !important;
   }
   .skills-grid {
     --column-count: 2;
@@ -317,10 +320,8 @@ video {
     text-align: center;
   }
   #mySkills {
-    > h1 {
-      font-size: 3rem !important;
-      transform: translateY(2rem);
-    }
+    font-size: 3rem !important;
+    transform: translateY(2rem);
   }
   #aboutMe {
     > h1 {

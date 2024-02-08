@@ -6,6 +6,7 @@ import { FooterComponent } from './shared/components/footer/footer.component';
 import { HeaderComponent } from './shared/components/header/header.component';
 import { TableOfContentsComponent } from './table-of-contents/table-of-contents.component';
 import { Router } from '@angular/router';
+import * as AOS from 'aos';
 
 @Component({
   selector: 'app-root',
@@ -24,9 +25,11 @@ import { Router } from '@angular/router';
 export class AppComponent {
   title = 'portfolio';
   isMenuOpen: boolean = false;
+  ngOnInit() {
+    AOS.init();
+  }
 
-  constructor(public router: Router) { }
-
+  constructor(public router: Router) {}
 
   onMenuToggle(isOpen: boolean) {
     this.isMenuOpen = isOpen;
