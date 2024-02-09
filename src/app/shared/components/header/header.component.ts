@@ -10,7 +10,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class HeaderComponent {
   @Output() isMenuOpenChange = new EventEmitter<boolean>();
-  @Input() open: boolean = false;
+  @Input() open!: boolean;
   imageIndex = 0;
   imageSources = [
     './assets/images/burger1.svg',
@@ -42,8 +42,8 @@ export class HeaderComponent {
   }
 
   toggleMenu() {
-    this.isMenuOpenChange.emit(!this.open);
     window.scrollTo(0, 0);
+    this.isMenuOpenChange.emit(!this.open);
   }
 
   closeMenu() {

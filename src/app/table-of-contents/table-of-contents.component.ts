@@ -11,10 +11,6 @@ import { RouterLink } from '@angular/router';
 export class TableOfContentsComponent {
   @Output() closeMenuBar = new EventEmitter<boolean>();
 
-  handleClick(event: Event) {
-    event.preventDefault();
-}
-
   closeTOC() {
     this.closeMenuBar.emit(false);
   }

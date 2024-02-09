@@ -2,6 +2,6 @@
 <div *ngIf="!isMenuOpen">
     <router-outlet></router-outlet>
 </div>
-<app-contact-me *ngIf="!isMenuOpen && !(router.url === '/privacy-policy')"></app-contact-me>
+<app-contact-me id="contactMe" *ngIf="!isMenuOpen && !(router.url === '/privacy-policy')"></app-contact-me>
 <app-table-of-contents (closeMenuBar)="onMenuToggle($event)" *ngIf="isMenuOpen"></app-table-of-contents>
 <app-footer [open]="isMenuOpen" (closeMenuBar)="onMenuToggle($event)"></app-footer>
