@@ -15,6 +15,7 @@ import {
 } from '@angular/material/snack-bar';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { RouterLink } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-contact-me',
@@ -26,6 +27,7 @@ import { RouterLink } from '@angular/router';
     ReactiveFormsModule,
     MatCheckboxModule,
     RouterLink,
+    TranslateModule
   ],
   templateUrl: './contact-me.component.html',
   styleUrl: './contact-me.component.scss',

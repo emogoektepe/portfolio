@@ -1,49 +1,50 @@
 <section>
     <div data-aos="fade-up">
-        <h1>Say Hi!</h1>
+        <h1>{{"sayHi" | translate}}</h1>
         <div class="form">
-            <h3>Want to discuss a new project?</h3>
-            <h4>Say hello! let's discuss your ideas and make it happen</h4>
+            <h3>{{"contactFirstText" | translate}}</h3>
+            <h4>{{"contactSecondText" | translate}}</h4>
             <form class="angularM-form">
                 <mat-form-field class="angularM-full-width" appearance="outline">
-                    <mat-label>Your name</mat-label>
+                    <mat-label>{{"yourName" | translate}}</mat-label>
                     <input type="text" matInput [formControl]="nameFormControl">
                     @if (nameFormControl.hasError('required')) {
-                    <mat-error>Name is required</mat-error>
+                    <mat-error>{{"yourNameRequired" | translate}}</mat-error>
                     }
                 </mat-form-field>
                 <mat-form-field class="angularM-full-width" appearance="outline">
-                    <mat-label>Your email</mat-label>
-                    <input type="email" matInput [formControl]="emailFormControl" placeholder="Ex. pat@example.com">
+                    <mat-label>{{"yourEmail" | translate}}</mat-label>
+                    <input type="email" matInput [formControl]="emailFormControl"
+                        [placeholder]="'emailExample' | translate">
                     @if (emailFormControl.hasError('email') && !emailFormControl.hasError('required') ||
                     emailFormControl.hasError('pattern')) {
-                    <mat-error>Please enter a valid email address</mat-error>
+                    <mat-error>{{"emailInvalid" | translate}}</mat-error>
                     }
                     @if (emailFormControl.hasError('required')) {
-                    <mat-error>Email is required</mat-error>
+                    <mat-error>{{"emailRequired" | translate}}</mat-error>
                     }
                 </mat-form-field>
                 <mat-form-field class="angularM-full-width" appearance="outline">
-                    <mat-label>Your message</mat-label>
+                    <mat-label>{{"yourMessage" | translate}}</mat-label>
                     <textarea class="text-area-contact" maxlength="512" #message type="text" matInput
                         [formControl]="messageFormControl"></textarea>
                     <mat-hint class="char-length" align="end">{{message.value.length}} / 512</mat-hint>
                     @if (messageFormControl.hasError('required')) {
-                    <mat-error>Your message is empty</mat-error>
+                    <mat-error>{{"yourMessageRequired" | translate}}</mat-error>
                     }
                 </mat-form-field>
                 <div class="checkbox-privacy">
                     <input type="checkbox" [formControl]="checkBoxFormControl" name="agreement" required>
                     <span style="color: var(--clr-cream);">
-                        I've read the <a routerLink="/privacy-policy">privacy policy</a> and
-                        agree to the processing of
-                        my data as outlined.
+                        {{"checkBoxFirstText" | translate}} <a routerLink="/privacy-policy">{{"privacyPolicy" |
+                            translate}}</a>
+                        {{"checkBoxLastText" | translate}}
                     </span>
                 </div>
             </form>
             <button (click)="sendMessage()"
                 [disabled]="!(nameFormControl.valid && emailFormControl.valid && messageFormControl.valid && checkBoxFormControl.valid)">
-                Send message
+                {{"sendMessageButton" | translate}}
             </button>
             <a href="#top">
                 <img width="45" height="45" class="back-to-top" src="./assets/images/lightArrow.svg" alt="">

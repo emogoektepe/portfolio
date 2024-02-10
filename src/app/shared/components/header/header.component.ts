@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-header',
@@ -11,6 +12,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class HeaderComponent {
   @Output() isMenuOpenChange = new EventEmitter<boolean>();
   @Input() open!: boolean;
+  language: string = '';
   imageIndex = 0;
   imageSources = [
     './assets/images/burger1.svg',
@@ -21,6 +23,12 @@ export class HeaderComponent {
   ];
   currentImage = this.imageSources[this.imageIndex];
 
+  constructor(private translateService: TranslateService) {}
+
+  ngOnInit() {
+    this.language = localStorage.getItem('lang') || 'en';
+  }
+  
   ngOnChanges() {
     const interval = setInterval(() => {
       if (!this.open) {
@@ -47,5 +55,11 @@ export class HeaderComponent {
 
   closeMenu() {
     this.isMenuOpenChange.emit(false);
+  }
+
+  changeLanguage(language: string) {
+    localStorage.setItem('lang', language);
+    this.translateService.use(language);
+    this.language = language;
   }
 }

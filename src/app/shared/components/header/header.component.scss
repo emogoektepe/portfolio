@@ -1,8 +1,8 @@
 section {
-    position: sticky;
-    top: 0;
-    z-index: 9999;
-    background-color: var(--clr-cream);
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  background-color: var(--clr-cream);
   > div {
     display: flex;
     justify-content: space-between;
@@ -13,6 +13,17 @@ section {
     > img {
       cursor: pointer;
     }
+  }
+}
+
+.header-right {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  font-size: 2rem;
+  font-family: var(--font-overpass);
+  > div {
+    margin-right: 2rem;
   }
 }
 

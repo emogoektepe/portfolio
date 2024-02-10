@@ -259,7 +259,12 @@ video {
       gap: 50px !important;
     }
   }
-
+  #mySkills {
+    * h1 {
+      font-size: 3rem !important;
+      transform: translateY(2rem);
+    }
+  }
   .footer-left {
     display: flex !important;
     flex-direction: column;
@@ -286,7 +291,7 @@ video {
   }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 460px) {
   .main-name {
     > span {
       font-size: 5rem !important;
@@ -302,7 +307,7 @@ video {
   }
   #mySkills {
     * h1 {
-      font-size: 4rem !important;
+      font-size: 2.5rem !important;
     }
   }
   .skills-grid {
@@ -321,12 +326,6 @@ video {
   }
   .form {
     text-align: center;
-  }
-  #mySkills {
-    * h1 {
-      font-size: 3rem !important;
-      transform: translateY(2rem);
-    }
   }
   #aboutMe {
     * h1 {

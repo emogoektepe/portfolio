@@ -7,6 +7,7 @@ import { HeaderComponent } from './shared/components/header/header.component';
 import { TableOfContentsComponent } from './table-of-contents/table-of-contents.component';
 import { Router } from '@angular/router';
 import * as AOS from 'aos';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -29,8 +30,13 @@ export class AppComponent {
     AOS.init();
   }
 
-  constructor(public router: Router) {}
-
+  constructor(
+    public router: Router,
+    private translateService: TranslateService
+  ) {
+    this.translateService.setDefaultLang('en');
+    this.translateService.use(localStorage.getItem('lang') || 'en');
+  }
   onMenuToggle(isOpen: boolean) {
     this.isMenuOpen = isOpen;
   }
