@@ -58,10 +58,6 @@ export class ContactMeComponent {
 
   constructor(private _snackBar: MatSnackBar) {}
 
-  scrollToTop() {
-    window.scrollTo(0, 0);
-  }
-
   sendMessage() {
     const contactData = {
       name: this.nameFormControl.value,

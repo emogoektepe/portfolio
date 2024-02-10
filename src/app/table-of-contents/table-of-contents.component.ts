@@ -11,6 +11,10 @@ import { RouterLink } from '@angular/router';
 export class TableOfContentsComponent {
   @Output() closeMenuBar = new EventEmitter<boolean>();
 
+  ngOnInit() {
+    window.scrollTo(0,0);
+  }
+
   closeTOC() {
     this.closeMenuBar.emit(false);
   }

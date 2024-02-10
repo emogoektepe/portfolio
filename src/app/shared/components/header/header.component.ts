@@ -42,7 +42,6 @@ export class HeaderComponent {
   }
 
   toggleMenu() {
-    window.scrollTo(0, 0);
     this.isMenuOpenChange.emit(!this.open);
   }
 
