@@ -11,12 +11,13 @@
                     <h2>{{ project.name }}</h2>
                     <h3>{{project.language}}</h3>
                     <p>{{ project.description | translate }}</p>
-                    <a target="_blank" href={{project.live}}>
+                    <a target="_blank" href={{project.live}} *ngIf="project.live">
                         <button>Live</button>
                     </a>
-                    <a target="_blank" href="{{project.github}}">
+                    <a target="_blank" href={{project.github}} *ngIf="project.github">
                         <button>Github</button>
                     </a>
+                    <h3 style="font-size: 36px;" *ngIf="!project.live">Coming Soon</h3>
                 </div>
     </div>
 </section>

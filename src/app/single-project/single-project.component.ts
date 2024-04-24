@@ -21,6 +21,14 @@ interface Project {
 export class SingleProjectComponent {
   @Input() projects: Project[] = [
     {
+      image: './assets/images/dabubble.png',
+      name: 'DABubble',
+      language: 'Angular | Firebase | TypeScript | SCSS | HTML',
+      description: 'projectDABubble',
+      live: '',
+      github: '',
+    },
+    {
       image: './assets/images/join.png',
       name: 'Join',
       language: 'JavaScript | HTML | CSS',
@@ -32,8 +40,7 @@ export class SingleProjectComponent {
       image: './assets/images/polloLoco.png',
       name: 'El Pollo Loco',
       language: 'JavaScript | HTML | CSS ',
-      description:
-        'projectPolloText',
+      description: 'projectPolloText',
       live: 'https://elpolloloco.emre-goektepe.com/',
       github: 'https://github.com/emogoektepe/El-Pollo-Loco',
     },
